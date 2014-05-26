@@ -97,7 +97,7 @@
     self.queryIndicator.hidden = NO;
     [self.queryIndicator startAnimating];
     NSString * number = self.fizzbuzzQuery.text;
-    NSNumber * fizzbuzzValue = [NSNumber numberWithInt:[number integerValue]];
+    NSNumber * fizzbuzzValue = [NSNumber numberWithInteger:[number integerValue]];
     NSDictionary *params = @{@"number": fizzbuzzValue};
     [self.fizzbuzz performActionWithFields:params andCompletion:^(NSError *error, SHMEntity *entity) {
         if (error) {
