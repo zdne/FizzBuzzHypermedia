@@ -11,6 +11,9 @@
 #import "SHMKit/SHMEntity.h"
 #import "SHMKit/SHMLink.h"
 
+static NSString * const RemoteAppRoot = @"http://fizzbuzzaas.herokuapp.com";
+static NSString * const LocalAppRoot = @"http://localhost:3000";
+
 @interface MSDViewController ()
 
 @property (nonatomic, retain) SHMParser *parser;
@@ -29,7 +32,7 @@
     self.queryIndicator.hidden = YES;
     self.fizzbuzzQuery.delegate = self;
     [self.indicator startAnimating];
-    self.url = @"http://fizzbuzzaas.herokuapp.com";
+    self.url = LocalAppRoot;
     self.parser = [[SHMParser alloc] initWithSirenRoot:self.url];
     [self.parser retrieveRoot:^(NSError *err, SHMEntity *entity) {
         if (err) {
